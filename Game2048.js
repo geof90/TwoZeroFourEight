@@ -216,11 +216,6 @@ class Game2048 extends React.Component {
     if (direction !== -1) {
       this.setState({board: this.state.board.move(direction)});
     }
-    
-    if (direction == 2) {
-      // simulate a bug
-      undefined.property;
-    }
   }
 
   render() {
@@ -233,7 +228,7 @@ class Game2048 extends React.Component {
         style={styles.container}
         onTouchStart={(event) => this.handleTouchStart(event)}
         onTouchEnd={(event) => this.handleTouchEnd(event)}>
-        <Text style={styles.text}>Hello from VSTS!</Text>
+        <Text style={styles.text}>Hello from VSTS</Text>
         <Board>
           {tiles}
         </Board>
