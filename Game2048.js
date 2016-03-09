@@ -228,7 +228,7 @@ class Game2048 extends React.Component {
         style={styles.container}
         onTouchStart={(event) => this.handleTouchStart(event)}
         onTouchEnd={(event) => this.handleTouchEnd(event)}>
-        <Text style={styles.text}>Hello from VSTS Build</Text>
+        <Text style={styles.text}>CI from VSTS</Text>
         <Board>
           {tiles}
         </Board>
