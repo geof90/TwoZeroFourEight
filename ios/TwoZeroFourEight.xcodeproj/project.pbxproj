@@ -23,6 +23,9 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		54C84D331C8D0D1200F54095 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C84D281C8D0CE500F54095 /* libCodePush.a */; };
 		54C84D351C8D0D1E00F54095 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C84D341C8D0D1E00F54095 /* libz.tbd */; };
+		54C84D3A1C8D768700F54095 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C84D371C8D768700F54095 /* HockeySDK.framework */; };
+		54C84D3B1C8D768800F54095 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 54C84D391C8D768700F54095 /* HockeySDKResources.bundle */; };
+		54C84D3F1C8D787B00F54095 /* RNHockeyApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C84D3E1C8D787B00F54095 /* RNHockeyApp.m */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +138,10 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		54C84D231C8D0CE500F54095 /* CodePush.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
 		54C84D341C8D0D1E00F54095 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		54C84D371C8D768700F54095 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
+		54C84D391C8D768700F54095 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
+		54C84D3D1C8D787B00F54095 /* RNHockeyApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNHockeyApp.h; sourceTree = "<group>"; };
+		54C84D3E1C8D787B00F54095 /* RNHockeyApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNHockeyApp.m; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +170,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				54C84D3A1C8D768700F54095 /* HockeySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +280,34 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		54C84D361C8D768700F54095 /* HockeySDK.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				54C84D371C8D768700F54095 /* HockeySDK.framework */,
+				54C84D381C8D768700F54095 /* Resources */,
+			);
+			name = HockeySDK.embeddedframework;
+			path = "HockeySDK-iOS/HockeySDK.embeddedframework";
+			sourceTree = "<group>";
+		};
+		54C84D381C8D768700F54095 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				54C84D391C8D768700F54095 /* HockeySDKResources.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		54C84D3C1C8D787B00F54095 /* RNHockeyApp */ = {
+			isa = PBXGroup;
+			children = (
+				54C84D3D1C8D787B00F54095 /* RNHockeyApp.h */,
+				54C84D3E1C8D787B00F54095 /* RNHockeyApp.m */,
+			);
+			name = RNHockeyApp;
+			path = "../node_modules/react-native-hockeyapp/RNHockeyApp";
+			sourceTree = "<group>";
+		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +319,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				54C84D3C1C8D787B00F54095 /* RNHockeyApp */,
 				54C84D231C8D0CE500F54095 /* CodePush.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -314,6 +351,7 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* TwoZeroFourEightTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				54C84D361C8D768700F54095 /* HockeySDK.embeddedframework */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -541,6 +579,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				54C84D3B1C8D768800F54095 /* HockeySDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +617,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				54C84D3F1C8D787B00F54095 /* RNHockeyApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +686,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEAD_CODE_STRIPPING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -663,6 +707,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

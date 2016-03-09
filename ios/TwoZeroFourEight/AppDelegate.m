@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "CodePush.h"
 #import "RCTRootView.h"
+#import <HockeySDK/HockeySDK.h>
 
 @implementation AppDelegate
 
@@ -51,6 +52,7 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
   return YES;
 }
 

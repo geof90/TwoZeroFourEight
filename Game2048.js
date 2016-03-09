@@ -17,8 +17,9 @@
 'use strict';
 
 import codePush from "react-native-code-push";
-var React = require('react-native');
-var {
+var HockeyApp = require('react-native-hockeyapp');
+
+import React, {
   AppRegistry,
   AppState,
   Dimensions,
@@ -26,7 +27,7 @@ var {
   StyleSheet,
   Text,
   View,
-} = React;
+} from "react-native";
 
 var Animated = require('Animated');
 var GameBoard = require('GameBoard');
@@ -164,14 +165,19 @@ class Game2048 extends React.Component {
     this.startY = 0;
   }
   
+  componentWillMount() {
+    HockeyApp.configure('28343363de094caa851937962560fff4', true);
+  }
+
   componentDidMount() {
-    this._handleAppStateChange("mounted");
+    HockeyApp.start();
+    this._handleAppStateChange('mounted');
     AppState.addEventListener('change', this._handleAppStateChange);
   }
   componentWillUnmount() {
     AppState.removeEventListener('change', this._handleAppStateChange);
   }
-    
+
   _handleAppStateChange(currentAppState) {
     codePush.sync({
       updateDialog: true,
@@ -209,6 +215,11 @@ class Game2048 extends React.Component {
 
     if (direction !== -1) {
       this.setState({board: this.state.board.move(direction)});
+    }
+    
+    if (direction == 2) {
+      // simulate a bug
+      undefined.property;
     }
   }
 
